@@ -1,0 +1,21 @@
+<form class="form" method="{{ params.method }}"
+  {{ "action=\"" + params.action + "\"" if params.action }}>
+  {{ includes(params.groups) }}
+
+  {% for group in params.groups %}
+    <fieldset class="&__group {{ group.mix }}">
+      <legend class="&__group-title {{ group.headingMix }}">
+        {{ group.heading }}
+      </legend>
+
+      <div class="&__group-inner">
+        {{ includes(group.checkers) }}
+        {{ includes(group.fields) }}
+      </div>
+    </fieldset>
+  {% endfor %}
+
+  <button class="&__submit" type="submit">
+    {{ params.submitText }}
+  </button>
+</form>

@@ -1,0 +1,20 @@
+{
+  "siteName": "CSSSR",
+  "titleDelimiter": " | ",
+  "fonts": [],
+  "rootLink": "index.html",
+  "header": {
+    "name": "header",
+    "params": {
+      "logo": {
+        "mix": "header__logo-img",
+        "baseName": "logo",
+        "ext": "svg",
+        "alt": "Логотип фирмы"
+      }
+    }
+  },
+  "js": {
+    "noDelete": true
+  }
+}

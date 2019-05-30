@@ -1,0 +1,17 @@
+*.ai
+*.log
+*.ps*
+*.sublime*
+.DS_Store
+.git/
+.hg
+.idea/
+.svn
+CVS
+Thumbs.db
+__MACOS*/
+build/
+temp/
+node_modules/
+npm-debug.*
+vscode/

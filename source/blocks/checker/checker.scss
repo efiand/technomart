@@ -1,0 +1,52 @@
+.checker {
+  display: block;
+  cursor: pointer;
+}
+
+.checker__label {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  transition: color 0.3s ease-in-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &--checkbox {
+    &::before {
+      background-image: url("checkbox-base.svg");
+    }
+
+    &::after {
+      background-image: url("checkbox-on.svg");
+    }
+  }
+
+  &--radio {
+    &::before {
+      background-image: url("radio-base.svg");
+    }
+
+    &::after {
+      background-image: url("radio-on.svg");
+    }
+  }
+}
+
+:checked + .checker__label::after {
+  opacity: 1;
+}
+
+:focus + .checker__label,
+.checker__label:hover {
+  // css
+}
