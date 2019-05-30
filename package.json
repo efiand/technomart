@@ -4,7 +4,9 @@
     "build": "cross-env NODE_ENV=production gulp build",
     "start": "gulp build && gulp server",
     "test": "gulp test",
-    "bem:validate": "bem-validate build/**/*.html"
+    "bem:validate": "bem-validate build/**/*.html",
+    "deploy": "npm run build && gh-pages -d build",
+    "push": "git add . && git commit -m \"edit\" && git push"
   },
   "source": "source",
   "build": "build",
