@@ -1,0 +1,11 @@
+{
+  "pageTitle": "Каталог",
+  "authorized": true,
+  "blocks": [
+    {
+      "name": "page-heading",
+      "mix": "page__heading",
+      "text": "Перфораторы"
+    }
+  ]
+}

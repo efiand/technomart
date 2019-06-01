@@ -1,0 +1,9 @@
+{% if page !== "index" %}
+  {% set href %}
+    href="{{ rootLink }}"
+  {% endset %}
+{% endif %}
+
+<a class="logo {{ params.mix }}" {{ href }}>
+  {{ include(params.picture) }}
+</a>

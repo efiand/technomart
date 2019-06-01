@@ -1,5 +1,9 @@
+@include font-face(Cuprum, 400, normal, cuprum, Cuprum Regular, Cuprum-Regular);
+@include font-face(Cuprum, 700, normal, cuprumbold, Cuprum Bold, Cuprum-Bold);
+@include font-face(Cuprum, 400, italic, cuprumitalic, Cuprum Italic, Cuprum-Italic);
+@include font-face(Cuprum, 700, italic, cuprumbolditalic, Cuprum Bold Italic, Cuprum-BoldItalic);
 @include font-face(PT Sans, 400, normal, ptsans, PT Sans, PTSans-Regular);
-@include font-face(PT Sans, 700, normal, ptsans-bold, PT Sans Bold, PTSans-Bold);
+@include font-face(PT Sans, 700, normal, ptsansbold, PT Sans Bold, PTSans-Bold);
 
 a {
   color: inherit;

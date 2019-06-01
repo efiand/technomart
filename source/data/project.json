@@ -1,17 +1,216 @@
 {
-  "siteName": "CSSSR",
+  "siteName": "Teхномарт",
   "titleDelimiter": " | ",
   "fonts": [],
   "rootLink": "index.html",
   "header": {
     "name": "header",
-    "params": {
-      "logo": {
-        "mix": "header__logo-img",
+    "logo": {
+      "name": "logo",
+      "mix": "header__logo",
+      "picture": {
+        "name": "picture",
         "baseName": "logo",
         "ext": "svg",
+        "width": 109,
+        "height": 19,
         "alt": "Логотип фирмы"
       }
+    },
+    "search": {
+      "name": "form",
+      "action": "https://echo.htmlacademy.ru",
+      "field": {
+        "name": "field",
+        "inputMix": "header__search-field",
+        "type": "search",
+        "inputName": "q",
+        "placeholder": "Поиск:"
+      }
+    },
+    "services": [
+      {
+        "mix": "__service--bookmark",
+        "href": "#",
+        "text": "Закладки: 0"
+      },
+      {
+        "mix": "__service--cart",
+        "href": "#",
+        "text": "Корзина: 0"
+      },
+      {
+        "mix": "__service--order",
+        "href": "#",
+        "text": "Оформить заказ"
+      }
+    ],
+    "description": "Интернет-магазин строительных материалов и инструментов для ремонта",
+    "tel": "+7 (812) 555-05-55",
+    "address": "г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8",
+    "profile": {
+      "name": "profile",
+      "mix": "header__profile",
+      "notAuthorized": [
+        {
+          "mix": "__accent-link __accent-link--login",
+          "href": "#",
+          "text": "Войти"
+        },
+        {
+          "mix": "__accent-link",
+          "href": "#",
+          "text": "Регистрация"
+        }
+      ],
+      "authorized": [
+        {
+          "mix": "__accent-link __accent-link--user",
+          "href": "#",
+          "text": "Равшан Джамшутович"
+        },
+        {
+          "mix": "__accent-link __accent-link--logout",
+          "href": "#",
+          "text": "<span class=\"visually-hiden\">Выход</span>"
+        },
+        {
+          "mix": "__link",
+          "href": "#",
+          "text": "Мои заказы"
+        },
+        {
+          "mix": "__link",
+          "itemMix": "__bulleted",
+          "href": "#",
+          "text": "Личный кабинет"
+        }
+      ]
+    },
+    "nav": {
+      "name": "menu",
+      "mix": "header__nav-list",
+      "linkMix": "header__nav-link",
+      "links": [
+        {
+          "href": "index.html",
+          "title": "Главная"
+        },
+        {
+          "href": "#",
+          "title": "Компания"
+        },
+        {
+          "href": "catalog.html",
+          "title": "Каталог"
+        },
+        {
+          "href": "#",
+          "title": "Новости"
+        },
+        {
+          "href": "#",
+          "title": "Спецпредложения"
+        },
+        {
+          "href": "#",
+          "title": "Доставка"
+        },
+        {
+          "href": "#",
+          "title": "Контакты"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "name": "footer",
+    "logo": {
+      "name": "logo",
+      "mix": "footer__logo",
+      "picture": {
+        "name": "picture",
+        "baseName": "logo",
+        "ext": "svg",
+        "width": 138,
+        "height": 23,
+        "alt": "Логотип фирмы"
+      }
+    },
+    "topMenu": {
+      "name": "menu",
+      "mix": "footer__top-menu",
+      "linkMix": "footer__top-link",
+      "links": [
+        {
+          "href": "#",
+          "title": "Компания"
+        },
+        {
+          "href": "#",
+          "title": "Новости"
+        },
+        {
+          "href": "catalog.html",
+          "title": "Каталог"
+        },
+        {
+          "href": "#",
+          "title": "Доставка"
+        },
+        {
+          "href": "#",
+          "title": "Контакты"
+        }
+      ]
+    },
+    "middleMenu": {
+      "name": "menu",
+      "mix": "footer__middle-menu",
+      "linkMix": "footer__middle-link",
+      "links": [
+        {
+          "href": "#",
+          "title": "Материалы"
+        },
+        {
+          "href": "#",
+          "title": "Техника"
+        },
+        {
+          "href": "#",
+          "title": "Инструмент"
+        },
+        {
+          "href": "#",
+          "title": "Спецпредложения"
+        }
+      ]
+    },
+    "contacts": "г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 +7 (812) 555-05-55",
+    "copyright": "© 2010–2019 Компания «Техномарт» Все права защищены",
+    "feedback": "Обратная связь: <a href=\"mailto:mail@htmlacademy.ru\">mail@htmlacademy.ru</a>",
+    "dev": "Разработано — <a href=\"https://htmlacademy.ru/intensive/htmlcss\">htmlacademy.ru</a>",
+    "socials": {
+      "name": "socials",
+      "mix": "footer__socials",
+      "list": [
+        {
+          "mix": "socials__link--vk",
+          "href": "#",
+          "title": "В контакте"
+        },
+        {
+          "mix": "socials__link--fb",
+          "href": "#",
+          "title": "Фейсбук"
+        },
+        {
+          "mix": "socials__link--insta",
+          "href": "#",
+          "title": "Инстаграмм"
+        }
+      ]
     }
   },
   "js": {

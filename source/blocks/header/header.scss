@@ -1,2 +1,68 @@
 .header {
+  font-size: 17px;
+  line-height: 18px;
+  font-family: $font-design;
+  background-color: $color-back;
+}
+
+.header__top {
+  color: #ffffff;
+  background-color: $color-back-dark-1;
+}
+
+.header__top-inner {
+  display: flex;
+}
+
+.header__logo {
+  width: 220px;
+  height: 100%;
+  max-height: 84px;
+}
+
+.header__search-field {
+  width: 270px;
+  min-height: 42px;
+  color: inherit;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $color-back-dark-2;
+  }
+
+  &:focus {
+    color: #000000;
+    background-color: #ffffff;
+  }
+}
+
+.header__services {
+  display: flex;
+  flex-wrap: wrap;
+  width: 450px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header__service {
+  display: block;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    background-color: $color-back-dark-2;
+  }
+
+  &:active {
+    color: rgba(#ffffff, 0.6);
+    background-color: $color-back-dark-3;
+  }
+}
+
+.header__bottom {
+  color: $color-text;
 }

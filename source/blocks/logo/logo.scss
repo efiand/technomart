@@ -1,0 +1,29 @@
+.logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: $color-accent;
+
+  &:hover[href],
+  &:focus {
+    background-color: $color-accent-2;
+  }
+
+  &:active[href] {
+    background-color: $color-accent-3;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: $color-accent-4;
+  }
+}

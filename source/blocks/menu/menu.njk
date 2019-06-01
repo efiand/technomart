@@ -1,0 +1,17 @@
+{% set currentHref = page + ".html" %}
+
+<menu class="menu {{ params.mix }}">
+  {% for link in params.links %}
+    {% set href %}
+      {% if link.href !== currentHref %}
+        href="{{ link.href }}"
+      {% endif %}
+    {% endset %}
+
+    <li>
+      <a class="menu__link {{ params.linkMix }}" {{ href }}>
+        {{ link.title }}
+      </a>
+    </li>
+  {% endfor %}
+</menu>

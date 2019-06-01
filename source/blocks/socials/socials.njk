@@ -1,0 +1,11 @@
+<ul class="socials {{ params.mix }}">
+  {% for social in params.list %}
+    <li>
+      <a class="__link {{ social.mix }}" href="{{ social.href }}">
+        <span class="visually-hidden">
+          {{ social.title }}
+        </span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

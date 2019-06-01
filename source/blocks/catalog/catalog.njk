@@ -1,0 +1,49 @@
+<section class="catalog">
+  {% if params.header %}
+    <header class="__header">
+      <h2 class="__heading">
+        {{ params.header.heading }}
+      </h2>
+
+      <a href="{{ params.header.link.href }}" class="__headlink">
+        {{ params.header.link.title }}
+      </a>
+    </header>
+  {% endif %}
+
+  <ul class="__list">
+    {% for item in params.items %}
+      <li class="__item {{ item.mix }}">
+        {{ include(item.picture) }}
+        {% if item.content %}
+          <ul class="__context-links">
+            <li>
+              <a href="{{ item.hrefs.bookmark }}" class="__context-link __context-link--buy">
+                {{ item.titles.buy }}
+              </a>
+            </li>
+            <li>
+              <a href="{{ item.hrefs.bookmark }}" class="__context-link">
+                {{ item.titles.bookmark }}
+              </a>
+            </li>
+          </ul>
+        {% endif %}
+
+        <h3 class="__item-title">
+          <a href="{{ item.content.href }}">
+            {{ item.content.title }}
+          </a>
+        </h3>
+        {% if item.content.oldPrice %}
+          <del class="__price __price--del">
+            {{ item.content.oldPrice }}
+          </del>
+        {% endif %}
+        <p class="__price">
+          {{ item.content.price }}
+        </p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

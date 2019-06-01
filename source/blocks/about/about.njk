@@ -1,0 +1,30 @@
+<div class="about">
+  {% for block in params.blocks %}
+    <section class="about__block {{ block.mix }}">
+      <h2 class="about__heading">
+        {{ block.heading }}
+      </h2>
+      {{ block.content }}
+
+      {% if block.list %}
+        <ul class="__liat">
+          {% for item in block.list %}
+            <li class="__item">
+              {{ item }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      {% if block.map %}
+        <a class="__map-link" href="{{ block.map.href }}">
+          {{ block.map.title }}
+        </a>
+      {% endif %}
+
+      <a class="__link" href="{{ block.link.href }}">
+        {{ block.link.title }}
+      </a>
+    </section>
+  {% endfor %}
+</div>

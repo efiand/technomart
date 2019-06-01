@@ -1,9 +1,377 @@
 {
+  "titleDelimiter": "",
   "pageTitle": "",
   "blocks": [
     {
-      "name": "",
-      "params": {}
+      "name": "page-heading",
+      "mix": "visually-hidden",
+      "text": "Техномарт"
+    },
+    {
+      "name": "promo",
+      "blockTitle": "Промо",
+      "categories": [
+        {
+          "name": "promo-card",
+          "mix": "promo__card",
+          "title": "Материалы",
+          "link": {
+            "href": "#",
+            "title": "На любой вкус"
+          }
+        },
+        {
+          "name": "promo-card",
+          "mix": "promo__card",
+          "title": "Инструмент",
+          "link": {
+            "href": "#",
+            "title": "На все случаи"
+          }
+        },
+        {
+          "name": "promo-card",
+          "mix": "promo__card",
+          "title": "Техника",
+          "link": {
+            "href": "#",
+            "title": "Для стройки"
+          }
+        }
+      ],
+      "goods": {
+        "name": "slider",
+        "mix": "promo__goods",
+        "slides": [
+          {
+            "mix": "promo__good",
+            "title": "Дрели",
+            "description": "Соседям на радость!",
+            "picture": {
+              "name": "picture",
+              "baseName": "promo-good-1",
+              "ext": "jpg",
+              "width": 620,
+              "height": 266,
+              "alt": "Дрель в работе"
+            },
+            "link": {
+              "href": "catalog.html",
+              "title": "Открыть каталог"
+            }
+          },
+          {
+            "mix": "promo__good",
+            "title": "Перфораторы",
+            "description": "Настоящие мужские игрушки",
+            "picture": {
+              "name": "picture",
+              "baseName": "promo-good-2",
+              "ext": "jpg",
+              "width": 620,
+              "height": 266,
+              "alt": "Перфоратор в работе"
+            },
+            "link": {
+              "href": "catalog.html",
+              "title": "Открыть каталог"
+            }
+          }
+        ],
+        "titles": {
+          "prev": "К предыдущему слайду",
+          "next": "К следующему слайду",
+          "dotPrefix": "Перейти к слайду №"
+        }
+      },
+      "services": [
+        {
+          "name": "promo-card",
+          "mix": "promo__card",
+          "title": "Скидки 50%",
+          "link": {
+            "href": "#",
+            "title": "На 350 товаров"
+          }
+        },
+        {
+          "name": "promo-card",
+          "mix": "promo__card",
+          "title": "Доставка",
+          "link": {
+            "href": "#",
+            "title": "Бесплатно"
+          }
+        }
+      ]
+    },
+    {
+      "name": "catalog",
+      "header": {
+        "heading": "Популярные товары:",
+        "link": {
+          "href": "#",
+          "title": "Все популярные товары"
+        }
+      },
+      "titles": {
+        "buy": "Купить",
+        "bookmarks": "В закладки"
+      },
+      "items": [
+        {
+          "content": {
+            "title": "Перфоратор BOSCH BFG 9000",
+            "href": "#",
+            "price": "32500 Р.",
+            "oldPrice": "25500 Р."
+          },
+          "hrefs": {
+            "buy": "#",
+            "bookmarks": "#"
+          },
+          "picture": {
+            "name": "picture",
+            "baseName": "perforator-3",
+            "ext": "jpg",
+            "width": 218,
+            "height": 170,
+            "alt": "Изображение товара"
+          }
+        },
+        {
+          "content": {
+            "title": "Перфоратор BOSCH BFG 3000",
+            "href": "#",
+            "price": "22500 Р.",
+            "oldPrice": "15500 Р."
+          },
+          "hrefs": {
+            "buy": "#",
+            "bookmarks": "#"
+          },
+          "picture": {
+            "name": "picture",
+            "baseName": "perforator-1",
+            "ext": "jpg",
+            "width": 218,
+            "height": 170,
+            "alt": "Изображение товара"
+          }
+        },
+        {
+          "content": {
+            "title": "Перфоратор BOSCH BFG 6000",
+            "href": "#",
+            "price": "30500 Р.",
+            "oldPrice": "25500 Р."
+          },
+          "hrefs": {
+            "buy": "#",
+            "bookmarks": "#"
+          },
+          "picture": {
+            "name": "picture",
+            "baseName": "perforator-2",
+            "ext": "jpg",
+            "width": 218,
+            "height": 170,
+            "alt": "Изображение товара"
+          }
+        },
+        {
+          "mix": "catalog__item--new",
+          "content": {
+            "title": "Перфоратор BOSCH BFG 2000",
+            "href": "#",
+            "price": "12500 Р."
+          },
+          "hrefs": {
+            "buy": "#",
+            "bookmarks": "#"
+          },
+          "picture": {
+            "name": "picture",
+            "baseName": "perforator-",
+            "ext": "jpg",
+            "width": 218,
+            "height": 170,
+            "alt": "Изображение товара"
+          }
+        }
+      ]
+    },
+    {
+      "name": "catalog",
+      "header": {
+        "heading": "Популярные производители:",
+        "link": {
+          "href": "#",
+          "title": "Все производители"
+        }
+      },
+      "items": [
+        {
+          "mix": "catalog__item--picture",
+          "picture": {
+            "name": "picture",
+            "baseName": "vendor-1",
+            "ext": "png",
+            "width": 126,
+            "height": 37,
+            "alt": "Bosch"
+          }
+        },
+        {
+          "mix": "catalog__item--picture",
+          "picture": {
+            "name": "picture",
+            "baseName": "vendor-2",
+            "ext": "png",
+            "width": 123,
+            "height": 40,
+            "alt": "Makita"
+          }
+        },
+        {
+          "mix": "catalog__item--picture",
+          "picture": {
+            "name": "picture",
+            "baseName": "vendor-3",
+            "ext": "png",
+            "width": 146,
+            "height": 44,
+            "alt": "DeWalt"
+          }
+        },
+        {
+          "mix": "catalog__item--picture",
+          "picture": {
+            "name": "picture",
+            "baseName": "vendor-4",
+            "ext": "png",
+            "width": 200,
+            "height": 44,
+            "alt": "Интерскол"
+          }
+        },
+        {
+          "mix": "catalog__item--picture",
+          "picture": {
+            "name": "picture",
+            "baseName": "vendor-5",
+            "ext": "png",
+            "width": 169,
+            "height": 31,
+            "alt": "Hitachi"
+          }
+        },
+        {
+          "mix": "catalog__item--picture",
+          "picture": {
+            "name": "picture",
+            "baseName": "vendor-6",
+            "ext": "png",
+            "width": 121,
+            "height": 73,
+            "alt": "LG"
+          }
+        },
+        {
+          "mix": "catalog__item--picture",
+          "picture": {
+            "name": "picture",
+            "baseName": "vendor-7",
+            "ext": "png",
+            "width": 151,
+            "height": 96,
+            "alt": "AEG"
+          }
+        },
+        {
+          "mix": "catalog__item--picture",
+          "picture": {
+            "name": "picture",
+            "baseName": "vendor-8",
+            "ext": "png",
+            "width": 204,
+            "height": 69,
+            "alt": "Metabo"
+          }
+        }
+      ]
+    },
+    {
+      "name": "services",
+      "heading": "Сервисы",
+      "mix": "page__section-heading",
+      "description": "Хороший интернет-магазин отличается от плохого не только ценами! Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.",
+      "menu": {
+        "name": "menu",
+        "mix": "services__menu",
+        "linkMix": "services__menu-link",
+        "links": [
+          {
+            "title": "Доставка"
+          },
+          {
+            "href": "#",
+            "title": "Гарантия"
+          },
+          {
+            "href": "#",
+            "title": "Кредит"
+          }
+        ]
+      },
+      "contents": [
+        {
+          "mix": "__content--delivery",
+          "description": "Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж!"
+        },
+        {
+          "mix": "__content--warranty",
+          "description": "Если купленный у нас товар поломается или заискрит, а также в случае пожара, спровоцированного его возгаранием,  вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. Дом уж восстановите как-нибудь сами."
+        },
+        {
+          "mix": "__content--credit",
+          "description": "Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.",
+          "link": {
+            "href": "#",
+            "title": "Отправить заявку"
+          }
+        }
+      ]
+    },
+    {
+      "name": "about",
+      "blocks": [
+        {
+          "heading": "Компания «Техномарт»",
+          "content": "<p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p><p>Мы можем доставить ваш товар в самые отдаленные точки России! Техномарт работает со многими транспортными компаниями:</p>",
+          "list": [
+            "Деловые линии",
+            "Автотрейдинг",
+            "ЖелДорЭкспедиция"
+          ],
+          "link": {
+            "href": "#",
+            "title": "Подробнее о компании"
+          }
+        },
+        {
+          "heading": "Контакты",
+          "content": "Вы можете забрать товар сами, заехав в наш офис:",
+          "map": {
+            "href": "#",
+            "title": "Перейти к карте"
+          },
+          "link": {
+            "href": "#",
+            "title": "Заблудились? Напишите нам!"
+          }
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,16 @@
+{% set size %}
+  {% if params.width %}
+    width="{{ params.width }}"
+  {% endif %}
+  {% if params.width %}
+    height="{{ params.height }}"
+  {% endif %}
+{% endset %}
+
+<picture class="picture {{ params.mix }}">
+  {% if params.ext !== "svg" %}
+    <source type="image/webp" srcset="img/{{ params.baseName }}.webp">
+  {% endif %}
+  <img src="img/{{ params.baseName }}.{{ params.ext }}"
+    {{ size }} alt="{{ params.alt }}">
+</picture>

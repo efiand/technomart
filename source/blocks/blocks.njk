@@ -1,9 +1,11 @@
 {# Подключение блоков #}
 {% macro include(block) %}
-  {% set params = block.params %}
+  {% set params = block %}
 
-  {% filter bem(block.name) %}
-    {% include block.name | blockPath %}
+  {% filter nowhereHref %}
+    {% filter bem(block.name) %}
+      {% include block.name | blockPath %}
+    {% endfilter %}
   {% endfilter %}
 {% endmacro %}
 
@@ -12,8 +14,5 @@
     {{ include(block) }}
   {% endfor %}
 {% endmacro %}
-
-{% from "picture" | blockPath("macro") import picture with context %}
-{% from "field" | blockPath("macro") import fieldBase with context %}
 
 {% include "source/blocks/page/page.njk" %}

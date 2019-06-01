@@ -1,0 +1,29 @@
+<section class="{{ params.mix }}">
+  <h2 class="__heading">
+    {{ params.heading }}
+  </h2>
+  <p class="__description">
+    {{ params.description }}
+  </p>
+
+  {{ include(params.menu) }}
+
+  <ul class="__contents">
+    {% for content in params.contents %}
+      <li class="__content {{ content.mix }}">
+        <h3 class="__content-heading">
+          {{ params.menu.links[loop.index0].title }}
+        </h3>
+        <p>
+          {{ content.description }}
+        </p>
+
+        {% if content.link %}
+          <a class="__content-button button" href="{{ content.link.href }}">
+            {{ content.link.title }}
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>

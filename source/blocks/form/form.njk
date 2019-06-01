@@ -1,21 +1,35 @@
-<form class="form" method="{{ params.method }}"
-  {{ "action=\"" + params.action + "\"" if params.action }}>
-  {{ includes(params.groups) }}
+{% if params.method %}
+  {% set method %}
+    method="{{ params.method }}"
+  {% endset %}
+{% endif %}
+
+{% if params.action %}
+  {% set action %}
+    action="{{ params.action }}"
+  {% endset %}
+{% endif %}
+
+<form class="form {{ params.mix }}" {{ method }} {{ action }}>
+  {{ include(params.checker) if params.checker }}
+  {{ include(params.field) if params.field }}
 
   {% for group in params.groups %}
-    <fieldset class="&__group {{ group.mix }}">
-      <legend class="&__group-title {{ group.headingMix }}">
+    <fieldset class="__group {{ group.mix }}">
+      <legend class="__group-title {{ group.headingMix }}">
         {{ group.heading }}
       </legend>
 
-      <div class="&__group-inner">
+      <div class="__group-inner">
         {{ includes(group.checkers) }}
         {{ includes(group.fields) }}
       </div>
     </fieldset>
   {% endfor %}
 
-  <button class="&__submit" type="submit">
-    {{ params.submitText }}
-  </button>
+  {% if params.submitText %}
+    <button class="__submit" type="submit">
+      {{ params.submitText }}
+    </button>
+  {% endif %}
 </form>

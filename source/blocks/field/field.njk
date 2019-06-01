@@ -1,9 +1,19 @@
-<label class="field">
-  <span class="&__label {{ params.labelMix }}">{{ params.label }}</span>
+{% set fieldBase %}
+  name="{{ params.inputName }}"
+  {{ "placeholder=\"" + params.placeholder + "\"" if params.placeholder }}
+  {{ "required" if params.required }}
+  {{ "disabled" if params.disabled }}
+{% endset %}
+
+<label class="field {{ params.mix }}">
+  <span class="__label {{ params.labelMix }}">{{ params.label }}</span>
 
   {% if params.type !== "textarea" %}
-    <input class="&__input {{ params.inputMix }}" type="{{ params.type }}" value="{{ params.value }}" {{ fieldBase(params) }}>
+    <input class="__input {{ params.inputMix }}"
+      {{ "type=\"" + params.type + "\"" if params.type }}
+      value="{{ params.value }}" {{ fieldBase }}>
   {% else %}
-    <textarea class="&__input &__input--message" {{ fieldBase(params) }}>{{ params.value }}</textarea>
+    <textarea class="__input __input--message {{ params.inputMix }}"
+      {{ fieldBase }}>{{ params.value }}</textarea>
   {% endif %}
 </label>

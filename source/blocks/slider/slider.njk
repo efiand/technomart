@@ -1,0 +1,39 @@
+<div class="slider">
+  <ul class="__slides">
+    {% for slide in params.slides %}
+      <li class="__slide">
+        <b class="__title">
+          {{ slide.title }}
+        </b>
+        <p class="__description">
+          {{ slide.description }}
+        </p>
+        <a class="__button button" href="{{ slide.link.href }}">
+          {{ slide.link.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="__dots hidden">
+    {% for dot in params.slides %}
+      <button class="__dot">
+        <span class="visully-hidden">
+          {{ params.titles.dotPrefix }}
+          {{ loop.index }}
+        </span>
+      </button>
+    {% endfor %}
+  </div>
+
+  <button class="__browsing __browsing--prev hidden">
+    <span class="visully-hidden">
+      {{ params.titles.prev }}
+    </span>
+  </button>
+  <button class="__browsing __browsing--next hidden">
+    <span class="visully-hidden">
+      {{ params.titles.next }}
+    </span>
+  </button>
+</div>

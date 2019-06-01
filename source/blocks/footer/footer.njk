@@ -1,0 +1,29 @@
+<footer class="footer">
+  <div class="__top">
+    <div class="__top-inner container">
+      {{ include(params.logo) }}
+
+      <p class="__contacts">
+        {{ params.contacts }}
+      </p>
+
+      {{ include(params.topMenu) }}
+      {{ include(params.middleMenu) }}
+    </div>
+  </div>
+
+  <div class="__bottom-inner container">
+      <p class="__contacts">
+        {{ params.contacts }}
+      </p>
+
+      {{ include(params.socials) }}
+
+      <p class="__feedback">
+        {{ params.feedback }}
+      </p>
+      <p class="__dev">
+        {{ params.dev }}
+      </p>
+  </div>
+</footer>

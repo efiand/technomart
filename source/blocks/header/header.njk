@@ -1,6 +1,39 @@
 <header class="header">
-  <a class="&__logo logo"
-    {{ "href=\"" + rootLink + "\"" if page not "index" }}>
-    {{ picture(params.logo) }}
-  </a>
+  <div class="__top">
+    <div class="__top-inner container">
+      {{ include(params.logo) }}
+      {{ include(params.search) }}
+
+      <ul class="__services">
+        {% for service in params.services %}
+          <li>
+            <a class="__service {{ service.mix }}" href="{{ service.href }}">
+              {{ service.text }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="__bottom-inner container">
+    <p class="__description">
+      {{ params.description }}
+    </p>
+
+    <div class="__contacts">
+      <a class="__tel" href="tel:+{{ params.tel.slice(1) | onlyDigits }}">
+        {{ params.tel }}
+      </a>
+      <p class="__address">
+        {{ params.address }}
+      </p>
+    </div>
+
+    {{ include(params.profile) }}
+
+    <nav class="header__nav">
+      {{ include(params.nav) }}
+    </nav>
+  </div>
 </header>

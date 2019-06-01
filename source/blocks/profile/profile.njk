@@ -1,0 +1,17 @@
+{% set links = params.authorized if authorized else params.notAuthorized %}
+
+{% if params.itemMix %}
+  {% set itemClass %}
+    class="{{ params.itemMix}}"
+  {% endset %}
+{% endif %}
+
+<ul class="profile {{ params.mix }}">
+  {% for link in links %}
+    <li {{ itemClass }}>
+      <a class="__link {{ link.mix }}" href="{{ link.href }}">
+        {{ link.text }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

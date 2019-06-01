@@ -30,6 +30,7 @@ task(`html:compile`, () => {
       return {
         ...getJson(`${source}/data/project.json`),
         ...getJson(`${source}/data/pages/${pageName}.json`),
+        page: pageName,
         source,
         isDev: !process.env.NODE_ENV,
         template: `${source}/blocks/blocks.njk`
@@ -39,12 +40,18 @@ task(`html:compile`, () => {
       manageEnv: (env) => {
         env.opts.autoescape = false;
 
-        env.addFilter(`bem`, (str, blockName) => {
-          return str.replace(/&(\-\-|__)/g, `${blockName}$1`);
+        env.addFilter(`onlyDigits`, (str = ``) => str.replace(/\D/g, ``));
+
+        env.addFilter(`bem`, (str = ``, blockName = ``) => {
+          return str.replace(/("| )(\-\-|__)/g, `$1${blockName}$2`);
         });
 
-        env.addFilter(`blockPath`, (blockName, macro = ``) => {
-          return `${source}/blocks/${blockName}/${macro || blockName}.njk`;
+        env.addFilter(`nowhereHref`, (str = ``) => {
+          return str.replace(/="#"/g, `="#nowhere"`);
+        });
+
+        env.addFilter(`blockPath`, (blockName = ``) => {
+          return `${source}/blocks/${blockName}/${blockName}.njk`;
         });
 
         env.addFilter(`editDict`, (dict, key, value) => {

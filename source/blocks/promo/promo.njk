@@ -1,0 +1,13 @@
+<section class="promo --test">
+  <h2 class="visually-hidden">{{ params.blockTitle }}</h2>
+
+  <ul class="__categories">
+    {{ includes(params.categories) }}
+  </ul>
+
+  {{ include(params.goods) }}
+
+  <ul class="__services">
+    {{ includes(params.services) }}
+  </ul>
+</section>
