@@ -55,7 +55,11 @@
         {
           "mix": "__accent-link __accent-link--login",
           "href": "#",
-          "text": "Войти"
+          "text": "Войти",
+          "icon": {
+            "name": "symbol",
+            "id": "login"
+          }
         },
         {
           "mix": "__accent-link",
@@ -89,7 +93,6 @@
     },
     "nav": {
       "name": "menu",
-      "mix": "header__nav-list",
       "linkMix": "header__nav-link",
       "links": [
         {

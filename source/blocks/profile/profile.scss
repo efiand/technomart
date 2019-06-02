@@ -1,0 +1,55 @@
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 350px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.profile__accent-link {
+  position: relative;
+  display: block;
+  margin: 0 0 10px 10px;
+  padding: 12px 24px;
+  font-size: 21px;
+  line-height: 1;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  background-color: #ffffff;
+
+  svg {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    color: $color-icon;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-accent;
+
+    svg {
+      color: $color-text;
+    }
+  }
+
+  &:active {
+    color: rgba(#000000, 0.3);
+
+    svg {
+      color: $color-icon;
+    }
+  }
+
+  &--login {
+    padding-left: 48px;
+
+    svg {
+      width: 20px;
+      height: 17px;
+    }
+  }
+}

@@ -9,7 +9,8 @@
 <ul class="profile {{ params.mix }}">
   {% for link in links %}
     <li {{ itemClass }}>
-      <a class="__link {{ link.mix }}" href="{{ link.href }}">
+      <a class="{{ link.mix }}" href="{{ link.href }}">
+        {{ include(link.icon) if link.icon }}
         {{ link.text }}
       </a>
     </li>

@@ -6,7 +6,7 @@
 }
 
 .header__top {
-  margin: 0 0 48px;
+  margin: 0 0 6px;
   color: #ffffff;
   background-color: $color-back-dark;
 }
@@ -123,12 +123,13 @@
 .header__bottom-inner {
   display: flex;
   flex-wrap: wrap;
+  padding: 40px 0;
   color: $color-text;
 }
 
 .header__description {
   width: 216px;
-  margin: 0;
+  margin: 2px 0 20px;
   padding: 0 52px;
   font-size: 16px;
   line-height: 23px;
@@ -136,13 +137,60 @@
   font-style: italic;
 }
 
+.header__contacts {
+  box-sizing: border-box;
+  width: 270px;
+  text-align: center;
+}
+
+.header__tel {
+  position: relative;
+  display: block;
+  margin: 0 0 3px;
+  padding: 8px 20px 10px 42px;
+  font-size: 21px;
+  line-height: 1;
+  color: $color-accent;
+  text-decoration: none;
+  border: 3px solid #ffffff;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 19px;
+    height: 19px;
+    background-image: url("phone.svg");
+  }
+}
+
+.header__address {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 24px;
+}
+
 .header__nav {
   width: 100%;
+  margin: 20px 0;
+  padding: 0 24px;
   color: #ffffff;
-  background-color: $color-back-dark;
-  border-bottom: 5px solid $color-back-dark-2;
+  background-color: $color-text;
+  border-bottom: 5px solid $color-back-dark-4;
 }
 
 .header__nav-link {
+  padding: 20px 30px 18px;
   line-height: 1;
+
+  &:hover,
+  &:focus {
+    background-color: $color-back-dark-4;
+  }
+
+  &:active {
+    color: rgba(#ffffff, 0.5);
+    background-color: $color-back-dark-5;
+  }
 }
