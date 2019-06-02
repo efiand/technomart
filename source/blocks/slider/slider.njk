@@ -1,7 +1,8 @@
-<div class="slider">
+<div class="slider {{ params.mix }}">
   <ul class="__slides">
     {% for slide in params.slides %}
       <li class="__slide">
+        {{ include(slide.picture) }}
         <b class="__title">
           {{ slide.title }}
         </b>
@@ -17,8 +18,8 @@
 
   <div class="__dots hidden">
     {% for dot in params.slides %}
-      <button class="__dot">
-        <span class="visully-hidden">
+      <button class="__dot" data-index="{{ loop.index0 }}">
+        <span class="visually-hidden">
           {{ params.titles.dotPrefix }}
           {{ loop.index }}
         </span>
@@ -27,12 +28,12 @@
   </div>
 
   <button class="__browsing __browsing--prev hidden">
-    <span class="visully-hidden">
+    <span class="visually-hidden">
       {{ params.titles.prev }}
     </span>
   </button>
   <button class="__browsing __browsing--next hidden">
-    <span class="visully-hidden">
+    <span class="visually-hidden">
       {{ params.titles.next }}
     </span>
   </button>

@@ -1,7 +1,8 @@
 import Field from './field/field';
+import Slider from './slider/slider';
 
 const blocks = {
-  '.field': Field
+  '.slider': Slider
 };
 
 export default blocks;

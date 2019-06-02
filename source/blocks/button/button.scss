@@ -1,0 +1,30 @@
+.button {
+  display: block;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  font-family: $font-design;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: $color-accent;
+  border: none;
+  border-radius: 2px;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.3s;
+  transition-property: color, opacity, background-color;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+
+  &:hover,
+  &:focus {
+    background-color: $color-accent-2;
+  }
+
+  &:active {
+    background-color: $color-accent-3;
+  }
+}

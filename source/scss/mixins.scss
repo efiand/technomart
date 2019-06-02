@@ -15,3 +15,14 @@
     background-image: url("../img/#{$pict}.webp");
   }
 }
+
+@mixin chevron ($thickness: 2px, $size: 100%, $roundness: 0, $color: inherit) {
+  display: block;
+  box-sizing: border-box;
+  width: $size;
+  height: $size;
+  color: $color;
+  border-bottom: $thickness solid;
+  border-left: $thickness solid;
+  border-radius: $roundness;
+}

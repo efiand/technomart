@@ -1,0 +1,38 @@
+.promo {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 59px 0;
+  font-family: $font-design;
+}
+
+.promo__categories {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.promo__category {
+  margin: 0 20px 20px 0;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.promo__goods {
+  width: 620px;
+  margin: 0 20px 20px 0;
+}
+
+.promo__services {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.promo__service {
+  margin: 0 0 20px;
+}

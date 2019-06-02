@@ -1,11 +1,32 @@
 export default {
 
-  // Применение класса к набору DOM-элементов
-  applyClass(selector: string, Class: any) {
-    const nodeList = document.querySelectorAll(selector);
+  // Применение функции ко всем элементам набора
+  applyAll(payload, callback) {
+    let nodeList;
+    if (typeof payload === `string`) {
+      nodeList = document.querySelectorAll(payload);
+    } else {
+      nodeList = payload;
+    }
 
     for (let i = 0; i < nodeList.length; i++) {
-      new Class(nodeList[i]);
+      callback(nodeList[i]);
+    }
+  },
+
+  hide(node) {
+    node.classList.add(`hidden`);
+  },
+
+  unhide(node) {
+    node.classList.remove(`hidden`);
+  },
+
+  disableElem(elem, cond) {
+    if (cond) {
+      elem.setAttribute(`disabled`, true);
+    } else {
+      elem.removeAttribute(`disabled`);
     }
   }
 };

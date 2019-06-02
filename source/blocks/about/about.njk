@@ -1,4 +1,4 @@
-<div class="about">
+<div class="about container">
   {% for block in params.blocks %}
     <section class="about__block {{ block.mix }}">
       <h2 class="about__heading">
@@ -7,7 +7,7 @@
       {{ block.content }}
 
       {% if block.list %}
-        <ul class="__liat">
+        <ul class="__list">
           {% for item in block.list %}
             <li class="__item">
               {{ item }}

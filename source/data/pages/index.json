@@ -13,7 +13,7 @@
       "categories": [
         {
           "name": "promo-card",
-          "mix": "promo__card",
+          "mix": "promo-card--materials promo__category new",
           "title": "Материалы",
           "link": {
             "href": "#",
@@ -22,7 +22,7 @@
         },
         {
           "name": "promo-card",
-          "mix": "promo__card",
+          "mix": "promo-card--instruments promo__category",
           "title": "Инструмент",
           "link": {
             "href": "#",
@@ -31,7 +31,7 @@
         },
         {
           "name": "promo-card",
-          "mix": "promo__card",
+          "mix": "promo-card--tech promo__category",
           "title": "Техника",
           "link": {
             "href": "#",
@@ -49,6 +49,7 @@
             "description": "Соседям на радость!",
             "picture": {
               "name": "picture",
+              "mix": "slider__img",
               "baseName": "promo-good-1",
               "ext": "jpg",
               "width": 620,
@@ -66,6 +67,7 @@
             "description": "Настоящие мужские игрушки",
             "picture": {
               "name": "picture",
+              "mix": "slider__img",
               "baseName": "promo-good-2",
               "ext": "jpg",
               "width": 620,
@@ -87,7 +89,7 @@
       "services": [
         {
           "name": "promo-card",
-          "mix": "promo__card",
+          "mix": "promo-card--discounts promo__service",
           "title": "Скидки 50%",
           "link": {
             "href": "#",
@@ -96,7 +98,7 @@
         },
         {
           "name": "promo-card",
-          "mix": "promo__card",
+          "mix": "promo-card--delivery promo__service",
           "title": "Доставка",
           "link": {
             "href": "#",
@@ -107,6 +109,7 @@
     },
     {
       "name": "catalog",
+      "mix": "container",
       "header": {
         "heading": "Популярные товары:",
         "link": {
@@ -203,6 +206,7 @@
     },
     {
       "name": "catalog",
+      "mix": "container",
       "header": {
         "heading": "Популярные производители:",
         "link": {
@@ -304,7 +308,6 @@
     {
       "name": "services",
       "heading": "Сервисы",
-      "mix": "page__section-heading",
       "description": "Хороший интернет-магазин отличается от плохого не только ценами! Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.",
       "menu": {
         "name": "menu",

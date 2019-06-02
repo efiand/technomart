@@ -1,0 +1,18 @@
+.new {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "new";
+    position: absolute;
+    top: 6px;
+    right: -31px;
+    padding: 5px 40px;
+    font-weight: 400;
+    font-size: 15px;
+    font-family: $font-design;
+    color: #ffffff;
+    background-color: #ff5156;
+    transform: rotate(45deg);
+  }
+}
