@@ -6,25 +6,33 @@
 }
 
 .header__top {
+  margin: 0 0 48px;
   color: #ffffff;
-  background-color: $color-back-dark-1;
+  background-color: $color-back-dark;
 }
 
 .header__top-inner {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .header__logo {
-  width: 220px;
-  height: 100%;
-  max-height: 84px;
+  width: 180px;
+  height: 23px;
+  padding: 12px 20px 7px;
 }
 
 .header__search-field {
   width: 270px;
-  min-height: 42px;
+  height: 42px;
+  padding: 11px 20px 13px 48px;
   color: inherit;
   background-color: transparent;
+
+  &::placeholder {
+    color: inherit;
+    opacity: 1;
+  }
 
   &:hover {
     background-color: $color-back-dark-2;
@@ -36,19 +44,11 @@
   }
 }
 
-.header__services {
-  display: flex;
-  flex-wrap: wrap;
-  width: 450px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .header__service {
   display: block;
-  width: 130px;
-  padding: 10px;
+  box-sizing: border-box;
+  width: 150px;
+  padding: 11px 20px 13px;
   text-align: center;
   text-decoration: none;
 
@@ -61,8 +61,88 @@
     color: rgba(#ffffff, 0.6);
     background-color: $color-back-dark-3;
   }
+
+  &--alter {
+    background-color: $color-alter;
+
+    &:hover,
+    &:focus {
+      background-color: $color-alter-2;
+    }
+
+    &:active {
+      color: rgba(#ffffff, 0.5);
+      background-color: $color-alter-3;
+    }
+  }
+
+  &--with-icon {
+    position: relative;
+    padding-left: 36px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 17px;
+      opacity: 0.3;
+      transition: inherit;
+    }
+
+    &:hover,
+    &:focus {
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      &::before {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  &--bookmark {
+    &::before {
+      width: 14px;
+      height: 16px;
+      background-image: url("bookmark.svg");
+    }
+  }
+
+  &--cart {
+    &::before {
+      width: 15px;
+      height: 15px;
+      background-image: url("cart.svg");
+    }
+  }
 }
 
-.header__bottom {
+.header__bottom-inner {
+  display: flex;
+  flex-wrap: wrap;
   color: $color-text;
+}
+
+.header__description {
+  width: 216px;
+  margin: 0;
+  padding: 0 52px;
+  font-size: 16px;
+  line-height: 23px;
+  font-style: italic;
+  color: $color-accent;
+}
+
+.header__nav {
+  width: 100%;
+  color: #ffffff;
+  background-color: $color-back-dark;
+  border-bottom: 5px solid $color-back-dark-2;
+}
+
+.header__nav-link {
+  line-height: 1;
 }

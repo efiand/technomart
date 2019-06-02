@@ -30,22 +30,22 @@
     },
     "services": [
       {
-        "mix": "__service--bookmark",
+        "mix": "__service--with-icon __service--bookmark",
         "href": "#",
         "text": "Закладки: 0"
       },
       {
-        "mix": "__service--cart",
+        "mix": "__service--with-icon __service--cart",
         "href": "#",
         "text": "Корзина: 0"
       },
       {
-        "mix": "__service--order",
+        "mix": "__service--alter",
         "href": "#",
         "text": "Оформить заказ"
       }
     ],
-    "description": "Интернет-магазин строительных материалов и инструментов для ремонта",
+    "description": "Интернет-магазин строительных материалов и инструментов для ремонта",
     "tel": "+7 (812) 555-05-55",
     "address": "г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8",
     "profile": {

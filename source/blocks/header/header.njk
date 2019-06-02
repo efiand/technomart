@@ -4,15 +4,11 @@
       {{ include(params.logo) }}
       {{ include(params.search) }}
 
-      <ul class="__services">
-        {% for service in params.services %}
-          <li>
-            <a class="__service {{ service.mix }}" href="{{ service.href }}">
-              {{ service.text }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+      {% for service in params.services %}
+        <a class="__service {{ service.mix }}" href="{{ service.href }}">
+          {{ service.text }}
+        </a>
+      {% endfor %}
     </div>
   </div>
 
