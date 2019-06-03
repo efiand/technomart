@@ -10,7 +10,7 @@ export default {
     }
 
     for (let i = 0; i < nodeList.length; i++) {
-      callback(nodeList[i]);
+      callback(nodeList[i], i, nodeList);
     }
   },
 

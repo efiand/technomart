@@ -16,17 +16,6 @@
     {% endfor %}
   </ul>
 
-  <div class="__dots hidden">
-    {% for dot in params.slides %}
-      <button class="__dot" data-index="{{ loop.index0 }}">
-        <span class="visually-hidden">
-          {{ params.titles.dotPrefix }}
-          {{ loop.index }}
-        </span>
-      </button>
-    {% endfor %}
-  </div>
-
   <button class="__browsing __browsing--prev hidden">
     <span class="visually-hidden">
       {{ params.titles.prev }}
@@ -37,4 +26,15 @@
       {{ params.titles.next }}
     </span>
   </button>
+
+  <div class="__dots hidden">
+    {% for dot in params.slides %}
+      <button class="__dot" data-index="{{ loop.index0 }}">
+        <span class="visually-hidden">
+          {{ params.titles.dotPrefix }}
+          {{ loop.index }}
+        </span>
+      </button>
+    {% endfor %}
+  </div>
 </div>

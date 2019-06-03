@@ -41,18 +41,21 @@ export default class Slider {
   slide() {
     const self: any = this;
 
+    self.slides[self.currentSlide].classList.add(`slider__slide--current`);
+
     self.slider.style.transform = `translateX(-${self.currentSlide * 100}%)`;
 
     functions.disableElem(self.prev, self.currentSlide < 1);
     functions.disableElem(self.next, self.currentSlide >= self.slides.length - 1);
-    self.checkDots();
-  }
-
-  checkDots() {
-    const self: any = this;
 
     functions.applyAll(self.dots, (item) => {
       functions.disableElem(item, +item.getAttribute(`data-index`) === self.currentSlide);
     });
+
+    setTimeout(() => functions.applyAll(self.slides, (slide, i) => {
+      if (i !== self.currentSlide) {
+        slide.classList.remove(`slider__slide--current`);
+      }
+    }), ANIM_DELAY);
   }
 }

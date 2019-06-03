@@ -20,6 +20,11 @@
   width: 100%;
   min-height: 266px;
   padding: 22px 24px;
+  visibility: hidden;
+
+  &--current {
+    visibility: visible;
+  }
 }
 
 .slider__img {
@@ -82,13 +87,23 @@
 .slider__browsing {
   position: absolute;
   top: 50%;
+  width: 22px;
+  height: 40px;
+  padding: 0;
   color: inherit;
   background-color: transparent;
   border: none;
+  transform: translateY(-50%);
   cursor: pointer;
   user-select: none;
 
-  @include chevron(3px, 30px);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+
+    @include chevron(3px, 30px);
+  }
 
   &:disabled {
     cursor: default;
@@ -97,11 +112,19 @@
 
   &--prev {
     left: 30px;
-    transform: translateY(-50%) rotate(45deg);
+
+    &::before {
+      left: 5px;
+      transform: rotate(45deg);
+    }
   }
 
   &--next {
     right: 25px;
-    transform: translateY(-50%) rotate(225deg);
+
+    &::before {
+      left: -13px;
+      transform: rotate(225deg);
+    }
   }
 }

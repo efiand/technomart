@@ -217,6 +217,6 @@
     }
   },
   "js": {
-    "noDelete": true
+    "ANIM_DELAY": 300
   }
 }
