@@ -5,7 +5,7 @@ const { source, build, uglify } = require(`../../package.json`);
 
 // Повторное считывание для применения без перезапуска сборки
 const { readFileSync } = require(`fs`);
-const projectSrc = `${source}/data/project.json`;
+const projectSrc = `${source}/project.json`;
 const DATA = () => JSON.parse(readFileSync(projectSrc)).js;
 
 task(`js`, async () => {

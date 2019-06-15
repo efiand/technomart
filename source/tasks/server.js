@@ -7,8 +7,8 @@ const { source, build, server } = require(`../../package.json`);
 task(`server`, () => {
   init({ server: build, ...server });
 
-  watch(`${source}/**/*.njk`, series(parallel(`html`, `test:html`), `reload`));
-  watch(`${source}/data/**/*.json`, series(parallel(`html`, `test:html`, `js`, `test:js`), `reload`));
+  watch(`${source}/**/*.{njk,json}`, series(parallel(`html`, `test:html`), `reload`));
+  watch(`${source}/project.json`, series(parallel(`html`, `test:html`, `js`, `test:js`), `reload`));
   watch(`${source}/**/*.scss`, series(parallel(`css`, `test:css`), `reload`));
   watch(`${source}/**/*.ts`, series(parallel(`js`, `test:js`), `reload`));
   watch(`${source}/img/*.{jpg,png,svg}`, series(`img`, `reload`));

@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.8.0",
+    "@typescript-eslint/parser": "^1.10.2",
     "autoprefixer": "^9.5.0",
     "bem-validate": "^1.1.2",
     "browser-sync": "^2.26.3",
@@ -49,6 +50,7 @@
     "gulp-webp": "^4.0.1",
     "htmlacademy-stylelint-config": "^0.0.1",
     "imagemin-jpegoptim": "^6.0.0",
+    "nunjucks-includeData": "0.0.9",
     "postcss-csso": "^3.0.0",
     "pre-commit": "^1.2.2",
     "require-dir": "^1.2.0",

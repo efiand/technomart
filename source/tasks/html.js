@@ -20,20 +20,21 @@ const {
 const getJson = (json) => JSON.parse(require(`fs`).readFileSync(json));
 
 const exec = require(`child_process`).exec;
+const { basename } = require(`path`).win32;
 
 task(`html:compile`, () => {
-  return src(`${source}/pages/**/*.njk`)
+  return src(`${source}/pages/**/*.json`)
     .pipe(plumber())
-    .pipe(data((page) => {
-      const pageName = require(`path`).win32.basename(page.path, `.njk`);
+    .pipe(data((file) => {
+      const pageData = JSON.parse(file.contents.toString());
+      file.contents = Buffer.from(`{% extends "${source}/blocks/blocks.njk" %}`);
 
       return {
-        ...getJson(`${source}/data/project.json`),
-        ...getJson(`${source}/data/pages/${pageName}.json`),
-        page: pageName,
+        ...getJson(`${source}/project.json`),
+        ...pageData,
+        page: basename(file.path, `.json`),
         source,
-        isDev: !process.env.NODE_ENV,
-        template: `${source}/blocks/blocks.njk`
+        isDev: !process.env.NODE_ENV
       };
     }))
     .pipe(nunjucksRender({
