@@ -3,9 +3,7 @@
 const { task, src, dest } = require(`gulp`);
 const {
   cssBase64,
-  if: gulpIf,
   plumber,
-  sourcemaps,
   sass,
   combineMq,
   postcss,
@@ -16,9 +14,8 @@ const { source, build, base64 } = require(`../../package.json`);
 const isDev = !process.env.NODE_ENV;
 
 task(`css`, () => {
-  return src(`${source}/scss/style.scss`)
+  return src(`${source}/scss/style.scss`, { sourcemaps: isDev })
     .pipe(plumber())
-    .pipe(gulpIf(isDev, sourcemaps.init()))
     .pipe(sass())
     .pipe(combineMq())
     .pipe(postcss([
@@ -27,6 +24,5 @@ task(`css`, () => {
     ]))
     .pipe(cssBase64(base64))
     .pipe(rename({ suffix: `.min` }))
-    .pipe(gulpIf(isDev, sourcemaps.write(``)))
-    .pipe(dest(`${build}/css`));
+    .pipe(dest(`${build}/css`, { sourcemaps: isDev ? `.` : false }));
 });
