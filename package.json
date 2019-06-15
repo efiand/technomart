@@ -50,7 +50,6 @@
     "gulp-webp": "^4.0.1",
     "htmlacademy-stylelint-config": "^0.0.1",
     "imagemin-jpegoptim": "^6.0.0",
-    "nunjucks-includeData": "0.0.9",
     "postcss-csso": "^3.0.0",
     "pre-commit": "^1.2.2",
     "require-dir": "^1.2.0",
