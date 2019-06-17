@@ -1,0 +1,13 @@
+.perfect-pixel {
+  background-image: url("../img/previews/{{ page }}.jpg");
+}
+
+{% if mq %}
+  {% for mq in data.mq | dictkeys | reverse %}
+    @media {{ data.mq[mq] }} {
+      .perfect-pixel {
+        background-image: url("../img/previews/{{ page }}-{{ mq }}.jpg");
+      }
+    }
+  {% endfor %}
+{% endif %}

@@ -1,0 +1,13 @@
+.perfect-pixel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  opacity: 0.5;
+  filter: invert(100%);
+  pointer-events: none;
+}

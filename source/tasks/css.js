@@ -14,7 +14,7 @@ const { source, build, base64 } = require(`../../package.json`);
 const isDev = !process.env.NODE_ENV;
 
 task(`css`, () => {
-  return src(`${source}/scss/style.scss`, { sourcemaps: isDev })
+  return src(`${source}/scss/style${isDev ? `-dev` : ``}.scss`, { sourcemaps: isDev })
     .pipe(plumber())
     .pipe(sass())
     .pipe(combineMq())
@@ -23,6 +23,6 @@ task(`css`, () => {
       require(`postcss-csso`)({ comments: false })
     ]))
     .pipe(cssBase64(base64))
-    .pipe(rename({ suffix: `.min` }))
+    .pipe(rename(`style.min.css`))
     .pipe(dest(`${build}/css`, { sourcemaps: isDev ? `.` : false }));
 });

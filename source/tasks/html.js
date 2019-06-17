@@ -59,6 +59,10 @@ task(`html:compile`, () => {
           dict[key] = value;
           return dict;
         });
+
+        env.addFilter(`dictkeys`, (dict) => Object.keys(dict));
+
+        env.addFilter(`merge`, (dict, overrides) => ({ ...dict, ...overrides }));
       }
     }))
     .pipe(htmlhint(htmlhintConfig))

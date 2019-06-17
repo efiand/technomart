@@ -6,7 +6,13 @@ const { source, build, uglify } = require(`../../package.json`);
 // Повторное считывание для применения без перезапуска сборки
 const { readFileSync } = require(`fs`);
 const projectSrc = `${source}/project.json`;
-const DATA = () => JSON.parse(readFileSync(projectSrc)).js;
+const isDev = !process.env.NODE_ENV;
+
+const DATA = () => ({
+  ...JSON.parse(readFileSync(projectSrc)).js,
+  isDev
+});
+
 
 task(`js`, async () => {
   const compile = await require(`rollup`).rollup({
@@ -22,6 +28,6 @@ task(`js`, async () => {
   await compile.write({
     file: `${build}/js/script.min.js`,
     format: `iife`,
-    sourcemap: !process.env.NODE_ENV
+    sourcemap: isDev
   });
 });

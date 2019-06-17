@@ -1,9 +1,10 @@
 'use strict';
 
-const { task, src, dest } = require(`gulp`);
+const { task, parallel, src, dest } = require(`gulp`);
 const { changed, imagemin, webp, svgstore } = require(`gulp-load-plugins`)();
 const {
   source,
+  previews,
   build,
   temp,
   svgo,
@@ -11,10 +12,17 @@ const {
   webp: webpConfig,
   svgstore: svgstoreConfig
 } = require(`../../package.json`);
+const isDev = !process.env.NODE_ENV;
+
+const computedSource = [];
+if (isDev) {
+  computedSource.push();
+}
 
 const end = `${build}/img`;
+const previewsEnd = `${end}/previews`;
 
-task(`img`, () => {
+task(`img:build`, () => {
   return src(`${source}/img/*.{jpg,png,svg}`)
     .pipe(changed(end))
     .pipe(imagemin([
@@ -26,6 +34,17 @@ task(`img`, () => {
     .pipe(webp(webpConfig))
     .pipe(dest(end));
 });
+
+task(`img:dev`, () => {
+  return src(`${previews}/**/*.jpg`)
+    .pipe(changed(previewsEnd))
+    .pipe(imagemin([
+      require(`imagemin-jpegoptim`)(jpegoptim)
+    ]))
+    .pipe(dest(previewsEnd));
+});
+
+task(`img`, parallel(`img:build`, `img:dev`));
 
 task(`img:icons`, () => {
   return src(`${source}/img/icons/*.{png,svg}`)

@@ -9,6 +9,12 @@
     <title>{{ siteName + titleDelimiter + pageTitle }}</title>
     <link rel="stylesheet" href="css/style.min.css">
 
+    {% if isDev %}
+      <style>
+        {% include "source/blocks/perfect-pixel/perfect-pixel.css.njk" %}
+      </style>
+    {% endif %}
+
     {% for font in fonts %}
       <link rel="preload" href="fonts/{{ font }}.woff2" as="font">
     {% endfor %}
@@ -21,6 +27,10 @@
     </main>
 
     {{ include(footer) }}
+
+    {% if isDev %}
+      {% include "source/blocks/perfect-pixel/perfect-pixel.njk" %}
+    {% endif %}
 
     <script src="js/script.min.js"></script>
   </body>

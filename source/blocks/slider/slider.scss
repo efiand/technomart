@@ -100,9 +100,9 @@
   &::before {
     content: "";
     position: absolute;
-    top: 5px;
+    top: 7px;
 
-    @include chevron(3px, 30px);
+    @include chevron(3px, 28px);
   }
 
   &:disabled {
@@ -111,7 +111,7 @@
   }
 
   &--prev {
-    left: 30px;
+    left: 26px;
 
     &::before {
       left: 5px;
@@ -120,7 +120,7 @@
   }
 
   &--next {
-    right: 25px;
+    right: 20px;
 
     &::before {
       left: -13px;
