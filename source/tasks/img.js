@@ -14,9 +14,9 @@ const {
 } = require(`../../package.json`);
 const isDev = !process.env.NODE_ENV;
 
-const computedSource = [];
+const tasks = [`img:build`];
 if (isDev) {
-  computedSource.push();
+  tasks.push(`img:dev`);
 }
 
 const end = `${build}/img`;
@@ -44,7 +44,7 @@ task(`img:dev`, () => {
     .pipe(dest(previewsEnd));
 });
 
-task(`img`, parallel(`img:build`, `img:dev`));
+task(`img`, parallel(...tasks));
 
 task(`img:icons`, () => {
   return src(`${source}/img/icons/*.{png,svg}`)

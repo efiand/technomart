@@ -2,7 +2,7 @@
 
 const { task, watch, series, parallel } = require(`gulp`);
 const { init, reload } = require(`browser-sync`).create();
-const { source, build, server } = require(`../../package.json`);
+const { source, build, previews, server } = require(`../../package.json`);
 
 task(`server`, () => {
   init({ server: build, ...server });
@@ -11,7 +11,8 @@ task(`server`, () => {
   watch(`${source}/project.json`, series(parallel(`html`, `test:html`, `js`, `test:js`), `reload`));
   watch(`${source}/**/*.scss`, series(parallel(`css`, `test:css`), `reload`));
   watch(`${source}/**/*.ts`, series(parallel(`js`, `test:js`), `reload`));
-  watch(`${source}/img/*.{jpg,png,svg}`, series(`img`, `reload`));
+  watch(`${source}/img/*.{jpg,png,svg}`, series(`img:build`, `reload`));
+  watch(`${source}/${previews}/*.jpg`, series(`img:dev`, `reload`));
   watch(`${source}/img/icons/*.{svg,png}`, series(`img:icons`, parallel(`css`, `test:css`), `reload`));
   watch(`${source}/img/sprite/*.svg`, series(`img:sprite`, `reload`));
   watch(`${source}/static/**/*`, series(parallel(`build:copy`, `test:static`), `reload`));

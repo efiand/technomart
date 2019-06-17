@@ -135,6 +135,7 @@
           },
           "picture": {
             "name": "picture",
+            "mix": "catalog__picture",
             "baseName": "perforator-3",
             "ext": "jpg",
             "width": 218,

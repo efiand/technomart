@@ -1,0 +1,43 @@
+.catalog__header {
+  display: flex;
+  margin: 0 0 20px;
+  padding: 25px 24px;
+  color: $color-text;
+  background-color: #f9f5f0;
+}
+
+.catalog__heading {
+  margin: 4px;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 30px;
+  font-family: $font-design;
+  text-transform: uppercase;
+}
+
+.catalog__headlink {
+  width: 253px;
+  margin-left: auto;
+}
+
+.catalog__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(100% + 20px);
+  margin: 0 0 0 -10px;
+  padding: 0;
+  list-style: none;
+}
+
+.catalog__item {
+  position: relative;
+  width: 218px;
+  margin: 0 10px 20px;
+  border: 1px solid $color-border;
+}
+
+.catalog__picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
