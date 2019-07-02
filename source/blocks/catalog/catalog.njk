@@ -13,36 +13,36 @@
 
   <ul class="__list">
     {% for item in params.items %}
-      <li class="__item {{ item.mix }}">
+      <li class="__item {{ "__item--only-picture" if not item.content }} {{ item.mix }}">
         {{ include(item.picture) }}
         {% if item.content %}
           <ul class="__context-links">
             <li>
-              <a href="{{ item.hrefs.bookmark }}" class="__context-link __context-link--buy">
-                {{ item.titles.buy }}
+              <a class="__context-link __context-link--buy" href="{{ item.hrefs.bookmark }}">
+                {{ titles.buy }}
               </a>
             </li>
             <li>
-              <a href="{{ item.hrefs.bookmark }}" class="__context-link">
-                {{ item.titles.bookmark }}
+              <a class="__context-link" href="{{ item.hrefs.bookmark }}">
+                {{ titles.toBookmarks }}
               </a>
             </li>
           </ul>
-        {% endif %}
 
-        <h3 class="__item-title">
-          <a href="{{ item.content.href }}">
-            {{ item.content.title }}
+          <h3 class="__item-title">
+            <a href="{{ item.content.href }}">
+              {{ item.content.title }}
+            </a>
+          </h3>
+          {% if item.content.oldPrice %}
+            <del class="__price __price--del {{ "__price--del-index" if isIndex }}">
+              {{ item.content.oldPrice }}
+            </del>
+          {% endif %}
+          <a class="__price __price--actual" href="item.content.priceHref">
+            {{ item.content.price }}
           </a>
-        </h3>
-        {% if item.content.oldPrice %}
-          <del class="__price __price--del">
-            {{ item.content.oldPrice }}
-          </del>
         {% endif %}
-        <p class="__price">
-          {{ item.content.price }}
-        </p>
       </li>
     {% endfor %}
   </ul>

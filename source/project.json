@@ -3,6 +3,10 @@
   "titleDelimiter": " | ",
   "fonts": [],
   "rootLink": "index.html",
+  "titles": {
+    "buy": "Купить",
+    "toBookmarks": "В закладки"
+  },
   "header": {
     "name": "header",
     "logo": {
